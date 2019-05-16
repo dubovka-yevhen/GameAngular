@@ -1,0 +1,24 @@
+<div class="content">
+  <div class="left_block">
+    <label>Enter the running time: </label>
+    <input placeholder="time in ms" type="number" #timerInput ><br>
+    <button (click)="startGame(timerInput.value)">START</button>
+  </div>
+  <table border="1" class="tablegame">
+    <tr *ngFor="let row of board; let i = index">
+      <td *ngFor="let col of row; let j = index" [style.background-color]="board[i][j].status" (click)="userClick(i,j)">
+      </td>
+    </tr>
+  </table>
+  <div class="right_block">
+    <h1>RESULT</h1>
+    <div class="result_block">
+      <label> Player </label>
+      <label> {{userScore}} </label>
+      <label> - </label>
+      <label> {{compScore}} </label>
+      <label> Computer </label>
+    </div>
+  </div>
+</div>
+

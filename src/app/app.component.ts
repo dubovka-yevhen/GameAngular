@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {ModalService} from './modal/services/modal.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Test';
+
+  get isModalOpen(): boolean {
+    return this.modalService.isOpen;
+  }
+
+  constructor(private modalService: ModalService) {
+
+  }
 }

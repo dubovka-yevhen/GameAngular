@@ -1,0 +1,13 @@
+<div class="overlay" (click)="close()">
+  <div class="content" (click)="$event.stopPropagation()">
+    <h1>RESULT</h1>
+    <label class="result_message"> {{userScore > compScore ? 'USER WIN' : 'COMP WIN'}}</label>
+    <label> Player </label>
+    <label> {{userScore}} </label>
+    <label> - </label>
+    <label> {{compScore}} </label>
+    <label> Computer </label>
+    <button (click)="close()">x</button>
+  </div>
+</div>
+
